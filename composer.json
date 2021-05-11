@@ -1,0 +1,17 @@
+{
+    "name": "zhangjunxi/php-mvc-framework",
+    "authors": [
+        {
+            "name": "zjxjohnxtlxb",
+            "email": "zjxjohnxtlxb@outlook.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "require": {
+        "vlucas/phpdotenv": "^5.3"
+    }
+}

@@ -2,13 +2,13 @@
 /*
  * @Date: 2021-05-03 17:29:03
  * @LastEditors: Junxi ZHANG
- * @LastEditTime: 2021-05-10 16:40:08
+ * @LastEditTime: 2021-05-12 13:04:50
  * @FilePath: /php-mvc-framework/models/Login.php
  */
 
 namespace app\models;
 
-use app\core\UserModel;
+use app\core\model\UserModel;
 use app\core\Application;
 
 class Login extends UserModel

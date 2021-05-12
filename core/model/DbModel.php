@@ -2,11 +2,13 @@
 /*
  * @Date: 2021-05-01 11:22:55
  * @LastEditors: Junxi ZHANG
- * @LastEditTime: 2021-05-03 21:52:11
- * @FilePath: /php-mvc-framework/core/DbModel.php
+ * @LastEditTime: 2021-05-12 13:00:15
+ * @FilePath: /php-mvc-framework/core/model/DbModel.php
  */
 
-namespace app\core;
+namespace app\core\model;
+
+use app\core\Application;
 
 abstract class DbModel extends Model
 {

@@ -2,13 +2,14 @@
 /*
  * @Date: 2021-04-29 20:55:57
  * @LastEditors: Junxi ZHANG
- * @LastEditTime: 2021-05-01 22:03:41
- * @FilePath: /php-mvc-framework/core/Database.php
+ * @LastEditTime: 2021-05-12 12:58:53
+ * @FilePath: /php-mvc-framework/core/db/Database.php
  */
 
-namespace app\core;
+namespace app\core\db;
 
 use PDO;
+use app\core\Application;
 
 class Database
 {

@@ -2,14 +2,22 @@
 /*
  * @Date: 2021-04-25 14:06:59
  * @LastEditors: Junxi ZHANG
- * @LastEditTime: 2021-05-11 18:38:13
+ * @LastEditTime: 2021-05-12 14:18:17
  * @FilePath: /php-mvc-framework/core/Application.php
  */
 
 namespace app\core;
 
+use app\core\db\Database;
+use app\core\model\UserModel;
+
 class Application
 {
+    public const EVENT_BEFORE_REQUEST = 'beforeRequest';
+    public const EVENT_AFTER_REQUEST = 'afterRequest';
+
+    protected array $eventListeners = [];
+
     public static string $ROOT_DIR;
     public static Application $APP;
 
@@ -49,6 +57,7 @@ class Application
 
     public function run()
     {
+        $this->triggerEvent(self::EVENT_BEFORE_REQUEST);
         try {
             echo $this->router->resolve();
         } catch (\Exception $e) {
@@ -76,5 +85,18 @@ class Application
     public static function isGuest()
     {
         return !self::$APP->user;
+    }
+
+    public function on($eventName, $callback)
+    {
+        $this->eventListeners[$eventName][] = $callback;
+    }
+
+    public function triggerEvent($eventName)
+    {
+        $callbacks = $this->eventListeners[$eventName] ?? [];
+        foreach ($callbacks as $callback) {
+            call_user_func($callback);
+        }
     }
 }

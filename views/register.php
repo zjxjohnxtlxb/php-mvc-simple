@@ -2,11 +2,11 @@
 /*
  * @Date: 2021-04-27 14:47:39
  * @LastEditors: Junxi ZHANG
- * @LastEditTime: 2021-05-11 19:04:48
+ * @LastEditTime: 2021-05-12 12:18:32
  * @FilePath: /php-mvc-framework/views/register.php
  */
 
-use app\core\form\Field;
+use app\core\form\InputField;
 
 /**
  * @var $model app\models\User
@@ -21,15 +21,15 @@ $this->title = 'Register';
 <?php $form->begin("", "post") ?>
 <div class="row">
     <div class="col">
-        <?php echo $form->field($model, 'firstname') ?>
+        <?php echo $form->inputField($model, 'firstname') ?>
     </div>
     <div class="col">
-        <?php echo $form->field($model, 'lastname') ?>
+        <?php echo $form->inputField($model, 'lastname') ?>
     </div>
 </div>
-<?php echo $form->field($model, 'email') ?>
-<?php echo $form->field($model, 'password', Field::TYPE_PASSWARD) ?>
-<?php echo $form->field($model, 'confirmPassword', Field::TYPE_PASSWARD) ?>
+<?php echo $form->inputField($model, 'email') ?>
+<?php echo $form->inputField($model, 'password', InputField::TYPE_PASSWARD) ?>
+<?php echo $form->inputField($model, 'confirmPassword', InputField::TYPE_PASSWARD) ?>
 <div class="form-group mt-2">
     <button type="submit" class="btn btn-primary">Submit</button>
 </div>

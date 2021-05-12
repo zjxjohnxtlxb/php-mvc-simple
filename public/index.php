@@ -2,7 +2,7 @@
 /*
  * @Date: 2021-04-25 11:15:41
  * @LastEditors: Junxi ZHANG
- * @LastEditTime: 2021-05-11 13:14:22
+ * @LastEditTime: 2021-05-12 14:17:09
  * @FilePath: /php-mvc-framework/public/index.php
  */
 
@@ -24,11 +24,14 @@ $config = [
 ];
 
 $app = new Application(dirname(__DIR__), $config);
+$app->on(Application::EVENT_BEFORE_REQUEST, function(){
+    echo 'Before request.';
+});
 
 $app->router->get('/', [SiteController::class, 'home']);
 
 $app->router->get('/contact', [SiteController::class, 'contact']);
-$app->router->post('/contact', [SiteController::class, 'handleContact']);
+$app->router->post('/contact', [SiteController::class, 'contact']);
 
 
 $app->router->get('/login', [AuthController::class, 'login']);

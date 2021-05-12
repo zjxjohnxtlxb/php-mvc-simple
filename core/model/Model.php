@@ -2,11 +2,13 @@
 /*
  * @Date: 2021-04-28 14:59:34
  * @LastEditors: Junxi ZHANG
- * @LastEditTime: 2021-05-10 16:39:33
- * @FilePath: /php-mvc-framework/core/Model.php
+ * @LastEditTime: 2021-05-12 12:59:41
+ * @FilePath: /php-mvc-framework/core/model/Model.php
  */
 
-namespace app\core;
+namespace app\core\model;
+
+use app\core\Application;
 
 abstract class Model
 {
